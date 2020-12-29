@@ -354,7 +354,7 @@ node* decision_tree_recursion(float **t_data, int s_number, int level, int origi
         tree->th_level = level;
         tree->node[1] = node_i;
         tree->entropy = current_entropy;
-        tree->value = t_data[node_j][node_i];
+        tree->value = (t_data[node_j][node_i] + t_data[node_j+1][node_i])/2.0;
         tree->child_node_samples[0] = f_total;
         tree->child_node_samples[1] = t_total;
     
@@ -389,7 +389,7 @@ node* decision_tree_recursion(float **t_data, int s_number, int level, int origi
         printf("                                                            ------------------------ node ------------------------\n");
         printf_tree(tree);
         printf("                                                            ------------------------------------------------------\n\n");
-    
+
         level = level +1;
     
         f_tree = decision_tree_recursion(ff_group, f_total, level, original_smaples_n);
@@ -677,9 +677,9 @@ int main(void)
     final_accuracy = calculate_score(testing_data, (sample_number*(1-random_size)), 4, 5 );
 
     printf("final accuracy = %4.4f \n", final_accuracy);
-    printf("\n--------------\n");
+    printf("\n----------------------------\n");
     print_feature_importantce(feature_importance_entropy);
-    printf("--------------\n");
+    printf("----------------------------\n");
     //print_feature_importantce(feature_importance);
 
     free(rank);

@@ -677,9 +677,9 @@ int main(void)
     final_accuracy = calculate_score(testing_data, (sample_number*(1-random_size)), 4, 5 );
 
     printf("final accuracy = %4.4f \n", final_accuracy);
-    printf("\n----------------------------\n");
+    printf("\n------------------------------\n");
     print_feature_importantce(feature_importance_entropy);
-    printf("----------------------------\n");
+    printf("--------------------------------\n");
     //print_feature_importantce(feature_importance);
 
     free(rank);

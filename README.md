@@ -5,9 +5,11 @@ Normally, people use sklearn module to use decision tree algo.
 Here, by using c code to reproduce decision tree algo.
 
 --------------------------------------------------------------------------------------------------------------
+
 By using greedy search to find best features to split training data into sub-data.
 Best features means it has highest information gain. In other words, the sub-data has low entropy (high purity).
 Using tree structutre to record all relevant infaomtyion and using this tree as rules to identitfy data.
+
 --------------------------------------------------------------------------------------------------------------
 
 The iris samples dataset is from scikit-learn. The most famous ML samples dataset around the word.
